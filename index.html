@@ -6,15 +6,75 @@
     <title>Los Manzanos - Menú</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #1a1a1a; color: #fdfaf5; font-family: 'Playfair Display', serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png'); }
-        h1 { color: #c5a059; font-size: 2.5rem; margin-bottom: 40px; }
-        .btn-idioma { display: block; width: 200px; padding: 15px; margin: 10px; border: 1px solid #c5a059; color: #c5a059; text-decoration: none; text-align: center; border-radius: 30px; font-weight: bold; transition: 0.3s; }
-        .btn-idioma:hover { background: #c5a059; color: white; }
+        :root {
+            --dorado: #c5a059;
+            --fondo: #1a1a1a;
+            --crema: #fdfaf5;
+        }
+        body { 
+            background-color: var(--fondo); 
+            color: var(--crema); 
+            font-family: 'Playfair Display', serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png'); 
+        }
+        h1 { 
+            color: var(--dorado); 
+            font-size: 2.5rem; 
+            margin-bottom: 30px; 
+            letter-spacing: 3px;
+            text-align: center;
+        }
+        .container-idiomas {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .btn-idioma { 
+            display: block; 
+            width: 220px; 
+            padding: 12px; 
+            border: 1px solid var(--dorado); 
+            color: var(--dorado); 
+            text-decoration: none; 
+            text-align: center; 
+            border-radius: 30px; 
+            font-weight: bold; 
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-idioma:hover { 
+            background: var(--dorado); 
+            color: white; 
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+        }
+        .logo-sub {
+            font-size: 0.9rem;
+            color: var(--dorado);
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
+    <div class="logo-sub">BIENVENIDOS · WELCOME</div>
     <h1>LOS MANZANOS</h1>
-    <a href="menu-es.html" class="btn-idioma">ESPAÑOL</a>
-    <a href="menu-en.html" class="btn-idioma">ENGLISH</a>
+    
+    <div class="container-idiomas">
+        <a href="menu-es.html" class="btn-idioma">Español</a>
+        <a href="menu-en.html" class="btn-idioma">English</a>
+        <a href="menu-fr.html" class="btn-idioma">Français</a>
+        <a href="menu-de.html" class="btn-idioma">Deutsch</a>
+        <a href="menu-it.html" class="btn-idioma">Italiano</a>
+    </div>
+
+    <p style="margin-top: 40px; font-size: 0.8rem; color: rgba(253, 250, 245, 0.4);">Digital Menu</p>
 </body>
 </html>
