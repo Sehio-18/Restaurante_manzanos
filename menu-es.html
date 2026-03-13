@@ -19,6 +19,41 @@
         .nombre { font-weight: bold; color: var(--crema); font-size: 1.05rem; }
         .precio { color: var(--dorado); font-weight: bold; margin-left: 10px; }
         .desc { font-size: 0.85rem; color: #aaa; margin-bottom: 15px; font-style: italic; line-height: 1.2; }
+        /* --- ESTILOS DE ALÉRGENOS --- */
+.alergenos {
+    display: flex;
+    gap: 6px; /* Espacio entre bolitas */
+    margin: 4px 0 8px 0; /* Margen arriba y abajo */
+}
+
+.icono-alergeno {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px; /* Tamaño del emoji */
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Colores según tu imagen de referencia */
+.lacteos { background-color: #6b4432; }
+.pescado { background-color: #3b5998; }
+.huevos { background-color: #f49121; }
+.mostaza { background-color: #c9a42d; }
+.cacahuete { background-color: #b87a4b; }
+.frutos-secos { background-color: #b13137; }
+.sulfitos { background-color: #7b1d4a; }
+.gluten { background-color: #ef7d52; }
+.moluscos { background-color: #5bb2b3; }
+.crustaceos { background-color: #26b6f0; }
+.apio { background-color: #4eb84e; }
+.soja { background-color: #11a651; }
+.sesamo { background-color: #928a67; }
+.altramuces { background-color: #f6d433; color: #000; }
     </style>
 </head>
 <body>
@@ -61,6 +96,11 @@
                     "Todos los precios mostrados son por persona y se necesita pedir mínimo para 2 personas para ordenar"
                 </div>
                 <div class="plato"><span class="nombre">Arroz Negro (Sugerencia)</span> <span class="precio">24.50 €</span></div>
+                <div class="alergenos">
+                <span class="icono-alergeno pescado" title="Pescado">🐟</span>
+                <span class="icono-alergeno moluscos" title="Moluscos">🐚</span>
+                <span class="icono-alergeno crustaceos" title="Crustáceos">🦀</span>
+                </div>
                 <div class="desc">Con Calamares, Atún, Almejas y Langostinos</div>
 
                 <div class="plato"><span class="nombre">Arroz Bogavante (Sugerencia)</span> <span class="precio">29.80 €</span></div>
