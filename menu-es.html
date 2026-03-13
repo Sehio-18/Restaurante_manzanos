@@ -20,40 +20,63 @@
         .precio { color: var(--dorado); font-weight: bold; margin-left: 10px; }
         .desc { font-size: 0.85rem; color: #aaa; margin-bottom: 15px; font-style: italic; line-height: 1.2; }
         /* --- ESTILOS DE ALÉRGENOS --- */
-.alergenos {
-    display: flex;
-    gap: 6px; /* Espacio entre bolitas */
-    margin: 4px 0 8px 0; /* Margen arriba y abajo */
-}
-
+/* Contenedor del icono y el texto */
 .icono-alergeno {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px; /* Tamaño del emoji */
+    font-size: 14px;
     color: white;
     border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    position: relative; /* Necesario para posicionar el texto */
+    cursor: pointer;
 }
 
-/* Colores según tu imagen de referencia */
-.lacteos { background-color: #6b4432; }
-.pescado { background-color: #3b5998; }
-.huevos { background-color: #f49121; }
-.mostaza { background-color: #c9a42d; }
-.cacahuete { background-color: #b87a4b; }
-.frutos-secos { background-color: #b13137; }
-.sulfitos { background-color: #7b1d4a; }
-.gluten { background-color: #ef7d52; }
-.moluscos { background-color: #5bb2b3; }
-.crustaceos { background-color: #26b6f0; }
-.apio { background-color: #4eb84e; }
-.soja { background-color: #11a651; }
-.sesamo { background-color: #928a67; }
-.altramuces { background-color: #f6d433; color: #000; }
+/* El recuadrito pequeño (oculto por defecto) */
+.icono-alergeno::after {
+    content: attr(data-nombre); /* Coge el nombre del atributo data-nombre */
+    position: absolute;
+    bottom: 125%; /* Aparece arriba del icono */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-family: sans-serif;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* El triangulito del recuadro */
+.icono-alergeno::before {
+    content: "";
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+}
+
+/* Mostrar al hacer clic o pasar el ratón */
+.icono-alergeno:hover::after, .icono-alergeno:active::after,
+.icono-alergeno:hover::before, .icono-alergeno:active::before {
+    opacity: 1;
+    visibility: visible;
+}
     </style>
 </head>
 <body>
