@@ -20,66 +20,48 @@
         .precio { color: var(--dorado); font-weight: bold; margin-left: 10px; }
         .desc { font-size: 0.85rem; color: #aaa; margin-bottom: 15px; font-style: italic; line-height: 1.2; }
         /* --- ESTILOS DE ALÉRGENOS --- */
-/* Contenedor del icono y el texto */
+.alergenos {
+    display: flex;
+    gap: 6px;
+    margin: 4px 0 8px 0;
+}
+
 .icono-alergeno {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 13px;
     color: white;
     border: 1px solid rgba(255,255,255,0.2);
-    position: relative; /* Necesario para posicionar el texto */
-    cursor: pointer;
 }
 
-/* El recuadrito pequeño (oculto por defecto) */
-.icono-alergeno::after {
-    content: attr(data-nombre); /* Coge el nombre del atributo data-nombre */
-    position: absolute;
-    bottom: 125%; /* Aparece arriba del icono */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-family: sans-serif;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s;
-    z-index: 10;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-}
-
-/* El triangulito del recuadro */
-.icono-alergeno::before {
-    content: "";
-    position: absolute;
-    bottom: 110%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 5px;
-    border-style: solid;
-    border-color: #333 transparent transparent transparent;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 10;
-}
-
-/* Mostrar al hacer clic o pasar el ratón */
-.icono-alergeno:hover::after, .icono-alergeno:active::after,
-.icono-alergeno:hover::before, .icono-alergeno:active::before {
-    opacity: 1;
-    visibility: visible;
-}
+/* Colores de tu PDF */
+.lacteos { background-color: #6b4432; }
+.pescado { background-color: #3b5998; }
+.huevos { background-color: #f49121; }
+.gluten { background-color: #ef7d52; }
+.moluscos { background-color: #5bb2b3; }
+.crustaceos { background-color: #26b6f0; }
+.sulfitos { background-color: #7b1d4a; }
     </style>
 </head>
 <body>
+    <div class="menu-container">
+    <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border: 1px solid var(--dorado); margin-bottom: 20px;">
+        <h3 style="color: var(--dorado); margin-top: 0; font-size: 1rem; text-align: center;">LEYENDA DE ALÉRGENOS</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.8rem;">
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno gluten">🌾</span> Gluten</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno lacteos">🥛</span> Lácteos</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno huevos">🥚</span> Huevos</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno pescado">🐟</span> Pescado</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno moluscos">🐚</span> Moluscos</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno crustaceos">🦀</span> Crustáceos</div>
+        </div>
+    </div>
+    
     <div class="menu-container">
        <div class="categoria-principal">Nuestros Platos</div>
         
@@ -262,12 +244,5 @@
                 <div class="plato"><span class="nombre">Mencía </span> <span class="precio">3.50 €</span></div>
             </div>
         </details>
-<script>
-    // Esto permite que al tocar en el móvil se active el estado "hover"
-    document.querySelectorAll('.icono-alergeno').forEach(el => {
-        el.addEventListener('click', function() {
-            // El recuadro aparecerá gracias al CSS :active/:hover
-        });
-    });
-</script>        
+       
 </body>
