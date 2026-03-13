@@ -95,6 +95,21 @@
     color: var(--dorado);
     text-decoration: underline;
 }
+        /* Añade esto a tu sección de <style> para que los precios se vean bien alineados */
+    .precios-vinos {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 2px;
+    }
+    .precios-vinos .precio {
+        font-size: 0.95rem;
+    }
+    .precios-vinos small {
+        color: #aaa;
+        font-weight: normal;
+        margin-left: 5px;
+    }
     </style>
 </head>
 <body>
@@ -556,44 +571,62 @@
             </div>
         </details>
 
-    <details>
+  <details>
     <summary>Vinos Tintos</summary>
     <div class="contenido-plato">
         
-        <h3 style="color: var(--oro); border-bottom: 1px solid var(--oro); margin: 20px 0 10px 0; font-family: 'Playfair Display', serif; font-size: 1.2rem;">D.O. Ca. Rioja</h3>
-
         <div class="plato">
-            <span class="nombre">Campillo Reserva</span>
-            <span class="precio">22.50 € <small>(3/4)</small></span>
-        </div>
-        <div class="desc">
-            <div style="display: flex; justify-content: space-between; margin-top: 5px; color: var(--crema);">
-                <span><strong>1/2 bot:</strong> 12.80 €</span>
-                <span><strong>3/4 bot:</strong> 22.50 €</span>
-                <span><strong>Magnum:</strong> 45.00 €</span>
+            <span class="nombre">Campillo Reserva (Rioja)</span>
+            <div class="precios-vinos">
+                <span class="precio">12.80 € <small>(1/2)</small></span>
+                <span class="precio">22.50 € <small>(3/4)</small></span>
+                <span class="precio">45.00 € <small>(Magnum)</small></span>
             </div>
         </div>
+        <div class="desc">Elegante, complejo y con notas de fruta madura.</div>
 
-        <h3 style="color: var(--oro); border-bottom: 1px solid var(--oro); margin: 30px 0 10px 0; font-family: 'Playfair Display', serif; font-size: 1.2rem;">D.O. Ribera del Duero</h3>
-
-        <div class="plato">
-            <span class="nombre">Nombre del Vino Ribera</span>
-            <span class="precio">19.50 €</span>
-        </div>
-        <div class="desc">Botella 3/4</div>
-
-        <h3 style="color: var(--oro); border-bottom: 1px solid var(--oro); margin: 30px 0 10px 0; font-family: 'Playfair Display', serif; font-size: 1.2rem;">Mencía (D.O. Monterrei / Valdeorras)</h3>
-
-        <div class="plato">
-            <span class="nombre">Nombre del Vino Mencía</span>
-            <span class="precio">15.00 €</span>
-        </div>
-        <div class="desc">
-            <div style="display: flex; gap: 20px; color: var(--crema);">
-                <span><strong>3/4 bot:</strong> 15.00 €</span>
-                <span><strong>Magnum:</strong> 29.00 €</span>
+        <div class="plato" style="margin-top: 15px;">
+            <span class="nombre">Marqués de Riscal Reserva (Rioja)</span>
+            <div class="precios-vinos">
+                <span class="precio">28.00 € <small>(3/4)</small></span>
+                <span class="precio">56.00 € <small>(Magnum)</small></span>
             </div>
         </div>
+        <div class="desc">Un clásico con aromas a regaliz y canela.</div>
+
+        <div class="plato" style="margin-top: 15px;">
+            <span class="nombre">Ponte da Boga (Ribeira Sacra)</span>
+            <div class="precios-vinos">
+                <span class="precio">18.50 € <small>(3/4)</small></span>
+            </div>
+        </div>
+        <div class="desc">Mencía fresco y floral.</div>
+
+        <div class="plato" style="margin-top: 15px;">
+            <span class="nombre">Joaquín Rebolledo (Valdeorras)</span>
+            <div class="precios-vinos">
+                <span class="precio">17.00 € <small>(3/4)</small></span>
+            </div>
+        </div>
+        <div class="desc">Varietal Mencía con carácter atlántico.</div>
+
+        <div class="plato" style="margin-top: 15px;">
+            <span class="nombre">Pago de los Capellanes (Ribera del Duero)</span>
+            <div class="precios-vinos">
+                <span class="precio">32.00 € <small>(3/4)</small></span>
+                <span class="precio">65.00 € <small>(Magnum)</small></span>
+            </div>
+        </div>
+        <div class="desc">Crianza equilibrado y persistente.</div>
+
+        <div class="plato" style="margin-top: 15px;">
+            <span class="nombre">Protos Roble (Ribera del Duero)</span>
+            <div class="precios-vinos">
+                <span class="precio">10.50 € <small>(1/2)</small></span>
+                <span class="precio">17.50 € <small>(3/4)</small></span>
+            </div>
+        </div>
+        <div class="desc">Joven, afrutado y con un toque de madera.</div>
 
     </div>
 </details>
