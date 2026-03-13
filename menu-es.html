@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Los Manzanos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --dorado: #c5a059; --fondo: #1a1a1a; --crema: #fdfaf5; }
+        body { font-family: 'Playfair Display', serif; background-color: var(--fondo); background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png'); color: var(--crema); margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .menu-container { width: 100%; max-width: 500px; }
+        .categoria-principal { color: var(--dorado); font-size: 1.8rem; text-align: center; margin: 40px 0 15px 0; border-bottom: 2px solid var(--dorado); padding-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; }
+        details { background: rgba(255, 255, 255, 0.05); margin-bottom: 12px; border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 8px; overflow: hidden; }
+        summary { padding: 15px; font-size: 1.1rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; color: var(--crema); font-weight: bold; }
+        summary::after { content: '▼'; font-size: 0.8rem; color: var(--dorado); }
+        details[open] summary::after { content: '▲'; }
+        .contenido-plato { padding: 15px; border-top: 1px solid rgba(197, 160, 89, 0.2); background: rgba(0, 0, 0, 0.2); }
+        .plato { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+        .nombre { font-weight: bold; color: var(--crema); font-size: 1.05rem; }
+        .precio { color: var(--dorado); font-weight: bold; margin-left: 10px; }
+        .desc { font-size: 0.85rem; color: #aaa; margin-bottom: 15px; font-style: italic; line-height: 1.2; }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="categoria-principal">Nuestros Platos</div>
+        <details><summary>Entrantes</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Mariscos</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Carne</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Pescado</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Pizzas</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Postres</summary><div class="contenido-plato">1</div></details>
+
+        <div class="categoria-principal">Vinos</div>
+        <details><summary>Copas de Vino</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Vinos tintos</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Vinos blancos</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Dulces y Rosados</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Espumosos, cavas, champagne</summary><div class="contenido-plato">1</div></details>
+
+        <div class="categoria-principal">Coctelería</div>
+        <details><summary>Ginebras</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Ron</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Whisky</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Brandy</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Vermut</summary><div class="contenido-plato">1</div></details>
+        <details><summary>Vodka</summary><div class="contenido-plato">1</div></details>
+    </div>
+</body>
+</html>
