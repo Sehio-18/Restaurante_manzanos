@@ -1,1 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Los Manzanos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        
+        :root { --dorado: #c5a059; --fondo: #1a1a1a; --crema: #fdfaf5; }
+        body { font-family: 'Playfair Display', serif; background-color: var(--fondo); background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png'); color: var(--crema); margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .menu-container { width: 100%; max-width: 500px; }
+        .categoria-principal { color: var(--dorado); font-size: 1.8rem; text-align: center; margin: 40px 0 15px 0; border-bottom: 2px solid var(--dorado); padding-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; }
+        details { background: rgba(255, 255, 255, 0.05); margin-bottom: 12px; border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 8px; overflow: hidden; }
+        summary { padding: 15px; font-size: 1.1rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; color: var(--crema); font-weight: bold; }
+        summary::after { content: '▼'; font-size: 0.8rem; color: var(--dorado); }
+        details[open] summary::after { content: '▲'; }
+        .contenido-plato { padding: 15px; border-top: 1px solid rgba(197, 160, 89, 0.2); background: rgba(0, 0, 0, 0.2); }
+        .plato { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+        .nombre { font-weight: bold; color: var(--crema); font-size: 1.05rem; }
+        .precio { color: var(--dorado); font-weight: bold; margin-left: 10px; }
+        .desc { font-size: 0.85rem; color: #aaa; margin-bottom: 15px; font-style: italic; line-height: 1.2; }
 
+        /* Botón Volver al Menú de Idiomas */
+.btn-idiomas {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--dorado);
+    color: var(--fondo);
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s, background-color 0.3s;
+    border: 1px solid var(--crema);
+}
+
+.btn-idiomas:hover {
+    transform: scale(1.05);
+    background-color: var(--crema);
+}
+
+/* Ajuste para que no tape el contenido al final en móviles */
+body { padding-bottom: 80px; }
+        /* --- ESTILOS DE ALÉRGENOS --- */
+.alergenos {
+    display: flex;
+    gap: 6px;
+    margin: 4px 0 8px 0;
+}
+
+.icono-alergeno {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Colores de tu PDF */
+.lacteos { background-color: #6b4432; }
+.pescado { background-color: #3b5998; }
+.huevos { background-color: #f49121; }
+.gluten { background-color: #ef7d52; }
+.moluscos { background-color: #5bb2b3; }
+.crustaceos { background-color: #26b6f0; }
+.mostaza { background-color: #c9a42d; }
+.apio { background-color: #4eb84e; }
+.cacahuete { background-color: #b87a4b; }
+.soja { background-color: #11a651; }
+.frutos-secos { background-color: #b13137; }
+.sesamo { background-color: #928a67; }
+.sulfitos { background-color: #7b1d4a; }
+.altramuces { background-color: #f6d433; color: #000; } /* El icono de altramuces suele ser oscuro sobre amarillo */
+/* La capa del fondo (oscura) */
+.modal-foto {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+/* La imagen que se verá */
+.modal-foto img {
+    max-width: 90%;
+    max-height: 80%;
+    border: 2px solid var(--dorado);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.5);
+}
+
+/* El nombre del plato debajo de la foto */
+#caption-foto {
+    position: absolute;
+    bottom: 50px;
+    color: var(--dorado);
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilo para que el nombre del plato parezca clicable */
+.nombre-plato-link {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.nombre-plato-link:hover {
+    color: var(--dorado);
+    text-decoration: underline;
+}
+        /* Añade esto a tu sección de <style> para que los precios se vean bien alineados */
+    .precios-vinos {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 2px;
+    }
+    .precios-vinos .precio {
+        font-size: 0.95rem;
+    }
+    .precios-vinos small {
+        color: #aaa;
+        font-weight: normal;
+        margin-left: 5px;
+    }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="btn-idiomas">
+    🌐 Langues
+</a>
+    <div id="ventana-foto" class="modal-foto" onclick="this.style.display='none'">
+    <img id="foto-grande" src="" alt="Foto del plato">
+    <div id="caption-foto"></div>
+    <span style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer">&times;</span>
+</div>
+    <div class="menu-container">
+  <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border: 1px solid var(--dorado); margin-bottom: 20px;">
+        <h3 style="color: var(--dorado); margin-top: 0; font-size: 1rem; text-align: center;">LÉGENDE DES ALLERGÈNES</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.8rem;">
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno gluten">🌾</span> Gluten</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno lacteos">🥛</span> Produits laitiers</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno huevos">🥚</span> Œufs</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno pescado">🐟</span> Poisson</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno moluscos">🐚</span> Mollusques</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno crustaceos">🦀</span> Crustacés</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno mostaza">🍯</span> Moutarde</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno apio">🌿</span> Céleri</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno cacahuete">🥜</span> Cacahuètes</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno soja">🫘</span> Soja</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno frutos-secos">🌰</span> Fruits à coque</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno sesamo">🥯</span> Sésame</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno sulfitos">🍷</span> Sulfites</div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span class="icono-alergeno altramuces">🟡</span> Lupins</div>
+        </div>
+    </div>
+    
