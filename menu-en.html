@@ -593,3 +593,29 @@ body { padding-bottom: 80px; }
     </div>
 </details>
         
+
+
+
+
+
+        
+<script>
+    // Función para abrir la imagen modal
+    function abrirImagen(url, nombre) {
+        document.getElementById('foto-grande').src = url;
+        document.getElementById('caption-foto').innerHTML = nombre;
+        document.getElementById('ventana-foto').style.display = 'flex';
+    }
+
+    // Cerrar desplegables automáticamente al abrir otro
+    const details = document.querySelectorAll("details");
+    details.forEach((targetDetail) => {
+        targetDetail.addEventListener("click", () => {
+            details.forEach((detail) => {
+                if (detail !== targetDetail) {
+                    detail.removeAttribute("open");
+                }
+            });
+        });
+    });
+</script>
